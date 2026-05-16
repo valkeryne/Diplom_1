@@ -6,6 +6,7 @@ import org.junit.runners.Parameterized;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.within;
+import static praktikum.Constants.PRICE_DELTA;
 
 @RunWith(Parameterized.class)
 public class BunTest {
@@ -42,6 +43,6 @@ public class BunTest {
         Bun bun = new Bun(name, price);
         assertThat(bun.getPrice())
                 .as("Неверная цена булочки")
-                .isCloseTo(price, within(0.01f)); // установлена точность для проверки без искажений для валютных операций
+                .isCloseTo(price, within(PRICE_DELTA)); // установлена точность для проверки без искажений для валютных операций
     }
 }

@@ -9,6 +9,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.AssertionsForClassTypes.within;
+import static praktikum.Constants.PRICE_DELTA;
 
 
 @RunWith(MockitoJUnitRunner.class)
@@ -75,7 +76,7 @@ public class BurgerTest {
         float expectedBurgerPrice = (float) (100 * 2 + 100.5 + 66.77);
         assertThat(burger.getPrice())
                 .as("Неверная цена бургера")
-                .isCloseTo(expectedBurgerPrice, within(0.01f));
+                .isCloseTo(expectedBurgerPrice, within(PRICE_DELTA));
     }
 
     @Test
